@@ -1,0 +1,59 @@
+﻿@model Student
+@{
+    ViewBag.Title = "create";
+}
+
+
+    <form method="post" enctype="multipart/form-data">
+        <div>
+            <label asp-for="Id"></label>
+            <input asp-for="Id" />
+            <span asp-validation-for="Id"></span>
+
+        </div>
+         <div>
+            <label asp-for="Name"></label>
+            <input asp-for="Name" />
+            <span asp-validation-for="Name"></span>
+        </div>
+         <div>
+            <label asp-for="Age"></label>
+            <input asp-for="Age" />
+           <span asp-validation-for="Age"></span>
+        </div>
+         <div>
+            <label asp-for="Email"></label>
+            <input asp-for="Email" />
+            <span asp-validation-for="Email"></span>
+        </div>
+        <div>
+            <label asp-for="Password"></label>
+            <input asp-for="Password" />
+            <span asp-validation-for="Password"></span>
+
+        </div>
+        <div>
+            <label asp-for="CPassword"></label>
+            <input asp-for="CPassword" />
+            <span asp-validation-for="CPassword"></span>
+        </div>
+    <div>
+    <label asp-for="deptId">Department</label>
+    <select asp-for="deptId" asp-items="ViewBag.depts">
+    </select>
+    <span asp-validation-for="deptId"></span>
+    </div>
+        <div>
+        <label asp-for="ImgName">Upload Image</label>
+        <input type="file" name="stdimg" multiple/>
+        <span asp-validation-for="ImgName"></span>
+        </div>
+    
+
+        </select>
+        <input type="submit" value="add" />
+        </form>
+@section scripts{
+    <partial name="_ValidationScriptsPartial" />
+        }
+

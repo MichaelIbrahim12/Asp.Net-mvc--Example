@@ -1,0 +1,41 @@
+﻿@model IEnumerable<Student>
+@{
+    ViewData["Title"] = "UpdatStudentDegree";
+}
+
+<h1>UpdatStudentDegree</h1>
+<form method="post">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th> Degree</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @item.Name
+                    </td>
+
+                    <td>
+                        @if (item.StudentCourses.FirstOrDefault(a => a.CrsId == ViewBag.crsid && a.StudentId == item.Id) == null)
+                        {
+                            <input type="text" name="stdDegree.@item.Id">
+                        }
+                        else{
+
+
+                            <input type="text" name="stdDegree.@item.Id" value="@item.StudentCourses.FirstOrDefault(a=>a.CrsId==ViewBag.crsid).Degree">
+
+                            }
+                        </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <input type="submit" value="add" />
+</form>
+

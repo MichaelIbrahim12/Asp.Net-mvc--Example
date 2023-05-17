@@ -1,0 +1,24 @@
+﻿@model Department
+
+
+<h1>Show Courses of @Model.Name  </h1>
+<table class="table table-bordered">
+    <tr>
+        <th>Cours Name</th>
+        <th>Duration</th>
+        <th></th>
+    </tr>
+    @foreach (var item in Model.Courses)
+    {
+        <tr>
+            <td> @item.Crs_Name</td>
+            <td>
+                @(item.Lect_Hours + item.Lab_Hours)
+            </td>
+            <td>
+                <a asp-action="UpdatStudentDegree" asp-route-id="@Model.ID" asp-route-crsId="@item.Crs_Id"> Update Student Degree</a>
+            </td>
+        </tr>
+    }
+</table>
+

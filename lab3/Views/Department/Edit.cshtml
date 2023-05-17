@@ -1,0 +1,20 @@
+﻿@model Department
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Edit</title>
+</head>
+<body>
+    <form method="post">
+        <input asp-for="ID" hidden />
+        NAME<input asp-for="Name" />
+        CAPACITY <input asp-for="Capacity" />
+        <input type="submit" value="Update" />
+    </form>
+
+</body>
+</html>

@@ -1,0 +1,18 @@
+﻿@model Student
+@{
+    Layout = "_layout";
+    ViewBag.Title = "Details";
+}
+
+
+    <h1 class="alert-danger"> ID= @Model.Id</h1>
+    <h1 class="alert-info"> Name= @Model.Name</h1>
+    <h1 class="alert-dark"> AGE= @Model.Age</h1>
+    <h1 class="alert-dark"> Email= @Model.Email</h1>
+    <h1 class="alert-dark"> Department= @Model.Department.Name</h1>
+@if (Model.ImgName != null)
+{
+    <img src="/images/@Model.ImgName"/>
+}
+
+<a asp-action="download" class="btn btn-danger">Download</a>
